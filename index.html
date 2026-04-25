@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprite - Fresh & Crisp Refreshment</title>
+    <meta name="description" content="Rasakan kesegaran lemon-lime yang ikonik dari Sprite. Dingin, jernih, dan tanpa kafein.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SPR<span>ITE</span></div>
+    </nav>
+
+    <section class="hero">
+        <img src="image/banner_dalam.jpeg" alt="Sprite Refreshing Landscape">
+        <div class="hero-overlay"></div>
+    </section>
+
+    <main>
+        <div class="product-card">
+            <span class="badge">LEMON-LIME SODA</span>
+            <h1 class="title">Sprite Original</h1>
+            <p class="tagline">Obey Your Thirst.</p>
+            
+            <p class="description">
+                Sprite adalah minuman ringan berkarbonasi dengan rasa lemon-lime yang ikonik. 
+                Dikenal dengan kejernihannya yang kristal dan rasa yang tajam serta menyegarkan, 
+                Sprite adalah pilihan sempurna untuk menghilangkan dahaga kapan saja, di mana saja. 
+                Tanpa kafein dan penuh dengan kesegaran alami.
+            </p>
+
+            <div class="features">
+                <div class="feature-item">
+                    <span>🍋</span> 100% Rasa Alami
+                </div>
+                <div class="feature-item">
+                    <span>❄️</span> Paling Enak Diminum Dingin
+                </div>
+                <div class="feature-item">
+                    <span>🚫</span> Bebas Kafein
+                </div>
+            </div>
+
+            <div class="price-container">
+                <p class="price-label">Harga Spesial</p>
+                <h2 class="price">Rp 5.000</h2>
+            </div>
+
+            <button class="buy-btn" id="buyButton" onclick="openModal()">BELI SEKARANG</button>
+        </div>
+    </main>
+
+    <!-- Modal QRIS Surprise -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title">Scan QR Code Ini!</h2>
+            <p class="modal-subtitle">Gunakan aplikasi Scanner atau Kamera HP Anda untuk melihat kejutan menyegarkan.</p>
+            
+            <div class="qris-container">
+                <!-- QR Code ini akan mengarah ke URL publik dog.gif Anda nanti -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://A-klyr.github.io/QRCODE/image/dog.gif" alt="QRIS Code" class="qris-image">
+            </div>
+
+            <div class="payment-instructions">
+                <strong>Cara Melihat Kejutan:</strong>
+                <ol>
+                    <li>Buka aplikasi <strong>Kamera</strong> atau <strong>QR Scanner</strong> di HP Anda.</li>
+                    <li>Arahkan kamera ke kode QR di atas.</li>
+                    <li>Klik link yang muncul (Pastikan internet aktif).</li>
+                    <li>Nikmati kesegaran <em>dog.gif</em> secara publik!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sprite Indonesia. Semua hak dilindungi undang-undang.</p>
+    </footer>
+
+    <script>
+        const modal = document.getElementById('modalOverlay');
+
+        function openModal() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scroll
+        }
+
+        // Close on click outside content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
